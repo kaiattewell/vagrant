@@ -8,8 +8,8 @@ New machines are defined in the YAML file "info.yml"
 The guest name, box, cpus, memory,ip and port must be defined(port is for running python program preinstalled on VM)
 
 
-    - name: jenkins
-     box: centos/7
+  - name: jenkins
+    box: centos/7
     cpus: 1
     memory: 4096 
     ip: 192.168.33.11
