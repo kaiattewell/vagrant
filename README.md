@@ -7,6 +7,7 @@ Template file for booting VMS using vagrant and a YAML file for configuration
 New machines are defined in the YAML file "info.yml" 
 The guest name, box, cpus, memory,ip and port must be defined(port is for running python program preinstalled on VM)
 
+...
 
   - name: jenkins
     box: centos/7
@@ -15,7 +16,7 @@ The guest name, box, cpus, memory,ip and port must be defined(port is for runnin
     ip: 192.168.33.11
     port: 8001
     
-
+...
 
 ## Required
 name:
