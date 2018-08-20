@@ -5,10 +5,18 @@
   memory: 4096 
   ip: 192.168.33.11
   port: 8001
+  packages:
+  - wget
+  - unzip
+  package_manager: yum
 - name: server
   box: centos/7
   cpus: 1
   memory: 4096 
   ip: 192.168.33.10
   port: 8002
+  packages:
+  - wget
+  - unzip
+  package_manager: yum
 ...

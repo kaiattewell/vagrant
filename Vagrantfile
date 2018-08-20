@@ -33,13 +33,33 @@ def set_box(info, info_vm)
 	info_vm.vm.box = info['box']
 end
 
+#Sets the IP of each VM from the YAML
 def set_ip(info, info_vm)
 	info_vm.vm.network "private_network", ip: info['ip']
 end
 
+#sets the port to forward for HTTP program using the YAML
 def set_port_fwd(info, info_vm)
 	 info_vm.vm.network "forwarded_port", guest: 9000, host: info['port']
 end
+
+#script to install packages for android or regular package managers
+def install_package(info, info_vm)
+	unless info['packages'].nil?
+		if info['package_manager'] == "apk"
+			info_vm.vm.provision "shell", inline: <<-SHELL
+				sudo #{info['package_manager']} install #{info['packages'].join(" ")}
+			SHELL
+		else
+			info_vm.vm.provision "shell", inline: <<-SHELL
+				sudo #{info['package_manager']} install -y #{info['packages'].join(" ")}
+			SHELL
+		end
+	end
+end
+
+		
+			
 
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
