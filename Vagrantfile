@@ -12,6 +12,10 @@ Vagrant.configure("2") do |config|
 		config.vm.define info['name'] do |info_vm|
 			set_box(info, info_vm)
 			set_cpu_mem(info, info_vm)
+			set_ip(info, info_vm)
+			set_port_fwd(info, info_vm)
+			info_vm.vm.provision "shell", path:"vagrantscripts/installscript"
+
 		end
 	end
 end
@@ -27,6 +31,14 @@ end
 #Sets the box type from the YAML
 def set_box(info, info_vm)
 	info_vm.vm.box = info['box']
+end
+
+def set_ip(info, info_vm)
+	info_vm.vm.network "private_network", ip: info['ip']
+end
+
+def set_port_fwd(info, info_vm)
+	 info_vm.vm.network "forwarded_port", guest: 9000, host: info['port']
 end
 
   # The most common configuration options are documented and commented below.
