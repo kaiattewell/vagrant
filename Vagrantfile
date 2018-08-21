@@ -5,17 +5,32 @@
 # configures the configuration version (we support older styles for
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
+
+#requires
 require 'yaml'
-info = YAML.load_file("info.yml")
+require 'json'
+require 'rubygems'
+
+filename = "info"
+
+if File.file? "#{filename}.json"
+    info = JSON.parse(File.read("#{filename}.json"))
+else
+    info = YAML.load_file("#{filename}.yaml")
+end
+
+
+
 Vagrant.configure("2") do |config|
+
 	info.each do |info|
 		config.vm.define info['name'] do |info_vm|
 			set_box(info, info_vm)
 			set_cpu_mem(info, info_vm)
 			set_ip(info, info_vm)
-			set_port_fwd(info, info_vm)
-			sharefol(info, info_vm)
-			info_vm.vm.provision "shell", path:"vagrantscripts/installscript"
+			#set_port_fwd(info, info_vm)
+			#sharefol(info, info_vm)
+			#info_vm.vm.provision "shell", path:"vagrantscripts/installscript"
 
 		end
 	end

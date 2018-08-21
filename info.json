@@ -1,0 +1,17 @@
+[
+    {
+        "name": "jenkins",
+        "box": "centos/7",
+        "memory": 4096,
+        "cpus": 2,
+        "ip": "192.168.33.11"
+    },
+
+    {
+        "name": "server",
+        "box": "centos/7",
+        "memory": 4096,
+        "cpus": 2,
+        "ip": "192.168.33.10"
+    }
+]

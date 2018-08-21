@@ -1,1 +1,1 @@
-{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"C:/Users/Admin/Desktop/vagrant-first/vagrant","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}},"virtualbox":{"/home/vagrant/sharedfol":{"guestpath":"/home/vagrant/sharedfol","hostpath":"C:/Users/Admin/Desktop/vagrant-first/vagrant/shared2","disabled":false,"__vagrantfile":true}}}
+{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"C:/Users/Admin/Desktop/vagrant-first/vagrant","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
