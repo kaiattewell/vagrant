@@ -16,7 +16,7 @@ filename = "info"
 if File.file? "#{filename}.json"
     info = JSON.parse(File.read("#{filename}.json"))
 else
-    info = YAML.load_file("#{filename}.yaml")
+    info = YAML.load_file("#{filename}.yml")
 end
 
 
@@ -29,10 +29,10 @@ Vagrant.configure("2") do |config|
 			set_cpu_mem(info, info_vm)
 			set_ip(info, info_vm)
 			set_port_fwd(info, info_vm)
-			#sharedfolder only works with YAML right now
 			sharefol(info, info_vm) 
 			install_package(info, info_vm)
 			info_vm.vm.provision "shell", path:"vagrantscripts/installscript"
+			info_vm.vm.provision "shell", path:"vagrantscripts/installjenkins"
 
 		end
 	end

@@ -11,8 +11,8 @@
         "VMshare": "/home/vagrant/sharedfol",
 		"packages"	    : [
 	    "git",
-	    "vim"
-		
+	    "vim",
+		"wget"
 	]
 		
     },
@@ -29,7 +29,8 @@
         "VMshare": "/home/vagrant/sharedfol",
 		"packages"	    : [
 	    "git",
-	    "vim"
+	    "vim",
+		"wget"
 	]
     }
 ]
