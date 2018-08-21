@@ -7,9 +7,12 @@
         "ip": "192.168.33.11",
 		"port": 8001,
 		"package_manager": "yum",
+		"OSshare": "C:/\Users/\Admin/\Desktop/\vagrant-first/\vagrant/\shared2",
+        "VMshare": "/home/vagrant/sharedfol",
 		"packages"	    : [
 	    "git",
 	    "vim"
+		
 	]
 		
     },
@@ -22,6 +25,8 @@
         "ip": "192.168.33.10",
 		"port": 8002,
 		"package_manager": "yum",
+		"OSshare": "C:/\Users/\Admin/\Desktop/\vagrant-first/\vagrant/\shared1",
+        "VMshare": "/home/vagrant/sharedfol",
 		"packages"	    : [
 	    "git",
 	    "vim"
