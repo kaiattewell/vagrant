@@ -4,7 +4,14 @@
         "box": "centos/7",
         "memory": 4096,
         "cpus": 2,
-        "ip": "192.168.33.11"
+        "ip": "192.168.33.11",
+		"port": 8001,
+		"package_manager": "yum",
+		"packages"	    : [
+	    "git",
+	    "vim"
+	]
+		
     },
 
     {
@@ -12,6 +19,12 @@
         "box": "centos/7",
         "memory": 4096,
         "cpus": 2,
-        "ip": "192.168.33.10"
+        "ip": "192.168.33.10",
+		"port": 8002,
+		"package_manager": "yum",
+		"packages"	    : [
+	    "git",
+	    "vim"
+	]
     }
 ]

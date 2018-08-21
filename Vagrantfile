@@ -28,9 +28,11 @@ Vagrant.configure("2") do |config|
 			set_box(info, info_vm)
 			set_cpu_mem(info, info_vm)
 			set_ip(info, info_vm)
-			#set_port_fwd(info, info_vm)
-			#sharefol(info, info_vm)
-			#info_vm.vm.provision "shell", path:"vagrantscripts/installscript"
+			set_port_fwd(info, info_vm)
+			#sharedfolder only works with YAML right now
+			#sharefol(info, info_vm) 
+			install_package(info, info_vm)
+			info_vm.vm.provision "shell", path:"vagrantscripts/installscript"
 
 		end
 	end
