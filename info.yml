@@ -9,6 +9,8 @@
   - wget
   - unzip
   package_manager: yum
+  OSshare: C:\Users\Admin\Desktop\vagrant-first\vagrant\shared1
+  VMshare: /home/vagrant/sharedfol
 - name: server
   box: centos/7
   cpus: 1
@@ -19,4 +21,6 @@
   - wget
   - unzip
   package_manager: yum
+  OSshare: C:\Users\Admin\Desktop\vagrant-first\vagrant\shared2
+  VMshare: /home/vagrant/sharedfol
 ...

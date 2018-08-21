@@ -14,6 +14,7 @@ Vagrant.configure("2") do |config|
 			set_cpu_mem(info, info_vm)
 			set_ip(info, info_vm)
 			set_port_fwd(info, info_vm)
+			sharefol(info, info_vm)
 			info_vm.vm.provision "shell", path:"vagrantscripts/installscript"
 
 		end
@@ -58,6 +59,10 @@ def install_package(info, info_vm)
 	end
 end
 
+# possibly create shared folders for the VMS WORK IN PROGRESS
+def sharefol(info, info_vm)
+		info_vm.vm.synced_folder info['OSshare'], info['VMshare']
+end
 		
 			
 
